@@ -34,6 +34,7 @@ INSERT INTO games (date,visiting_team,home_team,visiting_team_score,home_team_sc
 Import Data
 
 ```
+.mode csv
 .import /Users/mhoitomt/Desktop/nba_game_data/coallated_data/nba_odds_2007_08_coallated.csv games
 .import /Users/mhoitomt/Desktop/nba_game_data/coallated_data/nba_odds_2008_09_coallated.csv games
 .import /Users/mhoitomt/Desktop/nba_game_data/coallated_data/nba_odds_2009_10_coallated.csv games
