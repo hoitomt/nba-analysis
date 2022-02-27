@@ -10,6 +10,7 @@ Create games table
 
 ```
 CREATE TABLE IF NOT EXISTS games (
+  season TEXT,
   date TEXT,
   visiting_team TEXT,
   home_team TEXT,
@@ -49,3 +50,4 @@ Import Data
 .import /Users/mhoitomt/Desktop/nba_game_data/coallated_data/nba_odds_2018_19_coallated.csv games
 .import /Users/mhoitomt/Desktop/nba_game_data/coallated_data/nba_odds_2019_20_coallated.csv games
 .import /Users/mhoitomt/Desktop/nba_game_data/coallated_data/nba_odds_2020_21_coallated.csv games
+```

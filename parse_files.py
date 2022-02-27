@@ -140,10 +140,11 @@ def write_game_data(filename, games):
     file_name_parts = filename.split('_')
     first_year = file_name_parts[2]
     second_year = f"20{file_name_parts[3]}"
+    season = filename.replace('nba_odds_', '')
 
     output_filename = f"{data_dir}/coallated_data/{filename}_coallated.csv"
     with open(output_filename, 'w') as outputfile:
-        outputfile.write('date,visiting_team,home_team,visiting_team_score,home_team_score,spread_open,spread_close,total_open,total_close,spread_result_home_team,total_result\n')
+        outputfile.write('season,date,visiting_team,home_team,visiting_team_score,home_team_score,spread_open,spread_close,total_open,total_close,spread_result_home_team,total_result\n')
         for game in games:
             date_code = game['date_code']
             day = date_code[-2:]
@@ -155,7 +156,7 @@ def write_game_data(filename, games):
             else:
                 date_string = f"{second_year}-{int_month:02d}-{int_day:02d}"
 
-            outputfile.write(f"{date_string},{game['visiting_team']},{game['home_team']},{game['visiting_team_score']},{game['home_team_score']},{game['spread_open']},{game['spread_close']},{game['total_open']},{game['total_close']},{game['spread_result']},{game['total_result']}\n")
+            outputfile.write(f"{season},{date_string},{game['visiting_team']},{game['home_team']},{game['visiting_team_score']},{game['home_team_score']},{game['spread_open']},{game['spread_close']},{game['total_open']},{game['total_close']},{game['spread_result']},{game['total_result']}\n")
 
 if __name__ == "__main__":
   list_files()
